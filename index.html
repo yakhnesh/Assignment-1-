@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>A Multiplayer Game</title>
+    <style>
+      canvas {
+        width: 800px;
+        height: 600px;
+        border: 5px solid black;
+      }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+<p>Player one users E(Rock) ,R(Paper) ,T(Scissors)
+player two uses U(Rock),i(Paper),O(Scissors) 
+<p id=player1>player1</p>
+<p id=player2>player2</p>
+<script>
+document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 69) {
+        document.getElementById("player1").innerHTML = "Rock" }
+    else if (event.keyCode == 82) {
+        document.getElementById("player1").innerHTML = "paper" }
+
+else if (event.keyCode == 84) {
+        document.getElementById("player1").innerHTML = "scissors" }
+});
+
+document.body.addEventListener("keydown", function(event) {
+if (event.keyCode == 85) {
+        document.getElementById("player2").innerHTML = "Rock" }
+else if (event.keyCode == 73) {
+        document.getElementById("player2").innerHTML = "Paper" }
+else if (event.keyCode == 79) {
+        document.getElementById("player2").innerHTML = "scissors" }
+        
+});
+  
+
+</script>
+
+    <canvas id="canvas"></canvas>
+  </body>
+  <script src="/static/game.js"></script>
+</html>
